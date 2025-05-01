@@ -1,0 +1,407 @@
+:root {
+    --primary-color: #0e4c92;
+    --secondary-color: #1e7145;
+    --accent-color: #e31b23;
+    --light-bg: #f8f9fa;
+    --dark-bg: #212529;
+}
+
+body {
+    font-family: 'Cairo', 'Tajawal', sans-serif;
+    background-color: var(--light-bg);
+}
+
+.navbar {
+    background-color: var(--primary-color);
+}
+
+.card {
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card-img-top:hover {
+    transform: scale(1.05);
+}
+
+.flag-img, .club-logo {
+    width: 30px;
+    height: 20px;
+    object-fit: contain;
+    margin-left: 5px;
+}
+
+.modal-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+.section-title {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.nav-pills .nav-link.active {
+    background-color: var(--primary-color);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-success {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.btn-danger {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.previous-clubs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+#adminPanelContent {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.player-card {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.player-info {
+    padding: 15px;
+}
+
+.player-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.player-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.detail-item strong, .nationality strong {
+    margin-left: 5px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.nationality {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.club-history {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.club-badge {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+}
+
+.achievement-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
+.guess-controls {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.login-logo i {
+    font-size: 3rem;
+    color: var(--primary-color);
+}
+
+/* For the image preview in player cards */
+.player-image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-bottom: 100%; /* جعل الحاوية مربعة */
+    cursor: pointer;
+}
+
+.player-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.player-image-container:hover .player-image-overlay {
+    opacity: 1;
+}
+
+.zoom-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 160px;
+    }
+}
+
+/* تحسينات التجاوب للهواتف المحمولة */
+@media (max-width: 576px) {
+    /* تنسيقات عامة */
+    .container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    /* تصغير العناوين */
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    /* تعديل بطاقات اللاعبين */
+    .col-md-4.col-lg-3 {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    
+    .player-card {
+        margin-bottom: 15px;
+    }
+    
+    .player-name {
+        font-size: 1.1rem;
+    }
+    
+    .player-details {
+        font-size: 0.9rem;
+    }
+    
+    /* تعديل مودال التفاصيل */
+    .modal-dialog.modal-xl {
+        margin: 10px;
+    }
+    
+    .detail-label {
+        min-width: 80px;
+        font-size: 0.9rem;
+    }
+    
+    /* تعديل قسم النوادي والإنجازات */
+    .club-badge, .achievement-badge {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+    }
+    
+    /* تعديل صفحة الإدارة */
+    .table {
+        font-size: 0.9rem;
+    }
+    
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .btn-group .btn {
+        margin-bottom: 5px;
+        width: 100%;
+    }
+    
+    /* تعديل نموذج البحث */
+    #playerSearchInput {
+        font-size: 0.9rem;
+    }
+    
+    /* تعديل مودال عرض الصور */
+    .modal-img {
+        max-height: 70vh;
+    }
+    
+    /* تعديل تفاصيل اللاعب */
+    .detail-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .detail-value {
+        margin-top: 5px;
+    }
+}
+
+/* إضافات إضافية للشاشات المتوسطة */
+@media (min-width: 577px) and (max-width: 991px) {
+    .player-details-info {
+        margin-top: 20px;
+    }
+    
+    .club-history {
+        justify-content: center;
+    }
+}
+
+/* Add font for Arabic text */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap');
+
+/* تنسيقات صفحة تفاصيل اللاعب */
+.player-image-details {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-full-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    max-height: 500px;
+}
+
+.player-details-info {
+    padding: 15px;
+}
+
+.details-section {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.detail-row {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.detail-label {
+    min-width: 100px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.detail-value {
+    display: flex;
+    align-items: center;
+}
+
+.details-subtitle {
+    color: var(--primary-color);
+    border-right: 3px solid var(--accent-color);
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+
+/* تحسين مظهر معلومات النوادي والإنجازات */
+.club-history {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.club-badge {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.club-badge:hover {
+    transform: translateY(-2px);
+}
+
+.achievement-badge {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+} 
